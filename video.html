@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Assistir — Ghost Flower</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- BORDAS -->
+    <img class="borda-lateral esquerda"
+         src="borda-lateral.png">
+
+    <img class="borda-lateral direita"
+         src="borda-lateral.png">
+
+    <!-- FUNDO -->
+    <div class="background-paint"></div>
+
+    <!-- CABEÇALHO -->
+    <header class="site-header">
+
+        <div class="logo-area">
+
+            <div class="flower-symbol">
+                <img src="ghost-flower.png"
+                     alt="Ghost Flower">
+            </div>
+
+            <div>
+                <h1>Ghost Flower</h1>
+                <p>um pequeno pedaço da internet</p>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- PÁGINA DO VÍDEO -->
+    <main class="pagina-video">
+
+        <div class="player-container">
+
+            <video
+                id="videoPlayer"
+                controls
+                playsinline
+                preload="metadata">
+
+                <!-- VÍDEO PADRÃO -->
+                <source src="https://SEU-SITE.netlify.app/videos/video1.mp4"
+        type="video/mp4">
+
+                Seu navegador não consegue reproduzir este vídeo.
+            </video>
+
+        </div>
+
+
+        <section class="informacoes-video">
+
+            <span class="categoria-video" id="categoriaVideo">
+                🎨 Artes
+            </span>
+
+            <h2 id="tituloVideo">Desenhando uma criatura</h2>
+
+            <p id="descricaoVideo">
+                Aqui fica a descrição do vídeo.
+                Você pode escrever sobre o que acontece,
+                quem fez e qualquer outra coisa.
+            </p>
+
+        </section>
+
+
+        <!-- RECOMENDAÇÕES -->
+        <section class="recomendacoes">
+
+            <h2>🌿 Talvez você também goste...</h2>
+
+            <div class="recomendacoes-grid">
+
+                <a href="video.html" class="recomendacao">
+                    <div class="miniatura">
+                        🎵
+                    </div>
+
+                    <strong>Minha música nova</strong>
+                    <span>Música</span>
+                </a>
+
+
+                <a href="video.html" class="recomendacao">
+                    <div class="miniatura horror">
+                        👁️
+                    </div>
+
+                    <strong>Não olhe para trás</strong>
+                    <span>Horror</span>
+                </a>
+
+
+                <a href="video.html" class="recomendacao">
+                    <div class="miniatura">
+                        😂
+                    </div>
+
+                    <strong>Uma animação completamente idiota</strong>
+                    <span>Animação</span>
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <div class="footer-flower">
+            ✿ ❀ ✿ ❀ ✿
+        </div>
+
+        <p>
+            Ghost Flower © 2026
+        </p>
+
+        <p>
+            Feito com carinho na internet. 🌿
+        </p>
+
+    </footer>
+
+
+    <source src="videos/video1.mp4" type="video/mp4">
+
+
+    <script>
+
+        const video = document.getElementById("videoPlayer");
+
+        // RECEBE AS INFORMAÇÕES DO VÍDEO PELA URL
+
+        const parametros = new URLSearchParams(
+            window.location.search
+        );
+
+        const linkVideo = parametros.get("video");
+        const titulo = parametros.get("titulo");
+        const categoria = parametros.get("categoria");
+        const descricao = parametros.get("descricao");
+
+        // CARREGA O VÍDEO RECEBIDO
+
+        if (linkVideo) {
+            video.src = linkVideo;
+            video.load();
+        }
+
+        // ATUALIZA O TÍTULO
+
+        if (titulo) {
+            document.getElementById("tituloVideo").textContent =
+                titulo;
+
+            document.title = titulo + " — Ghost Flower";
+        }
+
+        // ATUALIZA A CATEGORIA
+
+        if (categoria) {
+            document.getElementById("categoriaVideo").textContent =
+                categoria;
+        }
+
+        // ATUALIZA A DESCRIÇÃO
+
+        if (descricao) {
+            document.getElementById("descricaoVideo").textContent =
+                descricao;
+        }
+
+
+        async function tentarHorizontal() {
+
+            try {
+
+                if (screen.orientation &&
+                    screen.orientation.lock) {
+
+                    await screen.orientation.lock("landscape");
+
+                }
+
+            } catch (erro) {
+
+                console.log(
+                    "O navegador não permitiu girar a tela."
+                );
+
+            }
+
+        }
+
+
+        video.addEventListener("fullscreenchange", function () {
+
+            if (document.fullscreenElement) {
+
+                tentarHorizontal();
+
+            }
+
+        });
+
+
+        video.addEventListener("play", function () {
+
+            // Tenta deixar o celular horizontal
+            // quando o vídeo começa.
+
+            tentarHorizontal();
+
+        });
+
+    </script>
+
+</body>
+
+</html>

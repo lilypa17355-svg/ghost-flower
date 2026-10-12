@@ -1,0 +1,280 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ghost Flower 🌸</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <img class="borda-lateral esquerda" src="borda-lateral.png">
+    <img class="borda-lateral direita" src="borda-lateral.png">
+
+    <div class="background-paint"></div>
+
+    <!-- resto do site -->
+
+    <!-- FUNDO -->
+    <div class="background-paint"></div>
+
+    <!-- CABEÇALHO -->
+    <header class="site-header">
+
+        <div class="logo-area">
+            <div class="flower-symbol">
+    <img src="ghost-flower.png" alt="Ghost Flower">
+</div>
+
+            <div>
+                <h1>Ghost Flower</h1>
+                <p>um pequeno pedaço da internet</p>
+            </div>
+        </div>
+
+        <!-- PESQUISA -->
+        <div class="search-box">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Procure um vídeo..."
+            >
+
+            <button id="searchButton">
+                🔎
+            </button>
+        </div>
+
+    </header>
+
+
+    <!-- MENU -->
+    <nav class="categories">
+
+        <button data-category="Comédia">😂 Comédia</button>
+
+        <button data-category="Música">🎵 Música</button>
+
+        <button data-category="Animação">🎨 Animação</button>
+
+        <button data-category="Artes">🖌️ Artes</button>
+
+        <button data-category="Horror">👻 Horror</button>
+
+    </nav>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="portal">
+
+        <!-- COLUNA PRINCIPAL -->
+        <section class="main-column">
+
+            <div class="section-title">
+                <span>🌸</span>
+                <h2>Vídeos recentes</h2>
+                <span>🌿</span>
+            </div>
+
+
+            <div id="videoGrid" class="video-grid">
+
+<!-- VÍDEO 1 -->
+<article class="video-card"
+    data-category="Animação"
+    data-video=""
+    onclick="if(this.dataset.video) window.location.href='video.html?video=' + encodeURIComponent(this.dataset.video)">
+
+                    <div class="thumbnail">
+                        <span>▶</span>
+                    </div>
+
+                    <h3>Uma animação completamente idiota</h3>
+
+                    <p class="category">
+                        🎨 Animação
+                    </p>
+
+                    <p class="description">
+                        Feita por alguém que provavelmente deveria estar dormindo.
+                    </p>
+
+                </article>
+
+
+                <!-- VÍDEO 2 -->
+                <article class="video-card"
+                    data-category="Música"
+                    data-video=""
+                    onclick="if(this.dataset.video) window.location.href='video.html?video=' + encodeURIComponent(this.dataset.video)">
+
+                    <div class="thumbnail">
+                        <span>▶</span>
+                    </div>
+
+                    <h3>Minha música nova</h3>
+
+                    <p class="category">
+                        🎵 Música
+                    </p>
+
+                    <p class="description">
+                        Uma música feita com carinho.
+                    </p>
+
+                </article>
+
+
+                <!-- VÍDEO 3 -->
+                <article class="video-card"
+                    data-category="Horror"
+                    data-video=""
+                    onclick="if(this.dataset.video) window.location.href='video.html?video=' + encodeURIComponent(this.dataset.video)">
+
+                    <div class="thumbnail horror">
+                        <span>▶</span>
+                    </div>
+
+                    <h3>Não olhe para trás</h3>
+
+                    <p class="category">
+                        👻 Horror
+                    </p>
+
+                    <p class="description">
+                        Talvez fosse melhor não ter aberto esse vídeo.
+                    </p>
+
+                </article>
+
+
+                <!-- VÍDEO 4 -->
+                <article class="video-card"
+                    data-category="Artes"
+                    data-video=""
+                    onclick="if(this.dataset.video) window.location.href='video.html?video=' + encodeURIComponent(this.dataset.video)">
+
+                    <div class="thumbnail art">
+                        <span>▶</span>
+                    </div>
+
+                    <h3>Desenhando uma criatura</h3>
+
+                    <p class="category">
+                        🖌️ Artes
+                    </p>
+
+                    <p class="description">
+                        Um desenho feito à mão.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- BARRA LATERAL -->
+        <aside class="sidebar">
+
+            <div class="side-box">
+
+                <h3>🌱 Bem-vindo!</h3>
+
+                <p>
+                    Este é o Ghost Flower.
+                </p>
+
+                <p>
+                    Um pequeno portal de vídeos
+                    feito por pessoas.
+                </p>
+
+                <p>
+                    Aqui você pode encontrar
+                    vídeos idiotas, estranhos,
+                    bonitos e até assustadores.
+                </p>
+
+                <strong>
+                    Só precisa ter sido feito
+                    com carinho. 💚
+                </strong>
+
+            </div>
+
+
+            <div class="side-box">
+
+                <h3>📜 Ghost Flower Beta</h3>
+
+                <p>
+                    O site ainda está crescendo!
+                </p>
+
+                <p>
+                    Se você quiser ajudar o projeto,
+                    considere participar da nossa
+                    vaquinha.
+                </p>
+
+               <button class="support-button" onclick="window.location.href='apoie.html'">
+    🌸 Apoiar o site
+</button>
+
+            </div>
+
+
+            <div class="side-box">
+
+                <h3>📬 Quer enviar um vídeo?</h3>
+
+                <p>
+                    Envie seu vídeo para nós.
+                </p>
+
+                <p>
+                    Todos os vídeos passam por
+                    uma avaliação antes de aparecer
+                    no Ghost Flower.
+                </p>
+
+<button class="email-button"
+    onclick="window.location.href='mailto:emailcomerciallily@gmail.com?subject=Envio%20de%20vídeo%20para%20o%20Ghost%20Flower'">
+    ✉️ Enviar vídeo
+</button>
+
+            </div>
+
+        </aside>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+    <footer>
+
+        <div class="footer-flower">
+            ✿ ❀ ✿ ❀ ✿
+        </div>
+
+        <p>
+            Ghost Flower © 2026
+        </p>
+
+        <p>
+            Feito com carinho na internet. 🌿
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
